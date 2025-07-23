@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Node...
+      - npm install
+  build:
+    commands:
+      - echo Build completed.
+  post_build:
+    commands:
+      - zip -r blog-backend.zip .
+artifacts:
+  files:
+    - blog-backend.zip

@@ -22,6 +22,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on http://3.106.170.151:3000`);
+  console.log(`Server running on http://3.104.110.7:${port}`);
 });
 
