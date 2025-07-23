@@ -3,8 +3,25 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/backend
+
 hooks:
-  AfterInstall:
-    - location: scripts/restart_pm2.sh
-      timeout: 300
+  ApplicationStop:
+    - location: scripts/stop.sh
+      timeout: 20
       runas: ec2-user
+
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 20
+      runas: ec2-user
+
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 20
+      runas: ec2-user
+
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 20
+      runas: ec2-user
+
