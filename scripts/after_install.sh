@@ -1,2 +1,2 @@
-cd /home/ec2-user/backend
+cd /home/ec2-user/blog-backend
 npm install
